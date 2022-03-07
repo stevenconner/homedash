@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# HomeDash - Built with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React app is intended to be run on some type of home server, and then accessed from a 1920x1080 tablet of some kind in the house. It was built with only one child in mind. It's been pretty customized to what my family wants, so it's got a precipitation/snow map using Rainviewer (https://www.rainviewer.com/api.html). It's got a weather forecast widget (thanks to https://github.com/farahat80/react-open-weather), a chore system (payouts need to be done manually, there is no logic to automate payouts to any system), a hot/cold lunch selection, and a basic dinner planner. It uses Unsplash for a fresh background every 6 hours.
 
-## Available Scripts
+![Screenshot](screenshot.png?raw=true)
 
-In the project directory, you can run:
+In order for this to function properly, you'll need to create a firebase app with a real time database. I attempted to add some basic null checking so it might work with an absolutely fresh firebase RTDB but it may not work.
 
-### `npm start`
+You'll need to create a .env file with these contents in it:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`REACT_APP_FIREBASE_API_KEY = ""` - Comes from firebase
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`REACT_APP_FIREBASE_AUTH_DOMAIN = ""` - Comes from firebase
 
-### `npm test`
+`REACT_APP_FIREBASE_PROJECT_ID = ""` - Comes from firebase
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`REACT_APP_FIREBASE_STORAGE_BUCKET = ""` - Comes from firebase
 
-### `npm run build`
+`REACT_APP_FIREBASE_MESSAGING_SENDER_ID = ""` - Comes from firebase
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`REACT_APP_FIREBASE_APP_ID = ""` - Comes from firebase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`REACT_APP_UNSPLASH_API_KEY = ""` - sign up at https://unsplash.com/developers
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`REACT_APP_WEATHER_BIT_API_KEY = ""` - You can choose between weatherbit and open weather for weather data, so you only need one of these api keys. https://www.weatherbit.io/
 
-### `npm run eject`
+`REACT_APP_OPEN_WEATHER_API_KEY = ""` - You can choose between weatherbit and open weather for weather data, so you only need one of these api keys. https://openweathermap.org/api
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`REACT_APP_CHILD_NAME = ""` - Should be your child's name
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`REACT_APP_SECRET_PASSCODE = ""` - This will be a secret pass code that you will use to confirm chore completions. Numbers 1-4, i used 4 digits but it will accept anything that matches.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`REACT_APP_HOME_LAT = ""` - This should be your home's latitude in a string
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`REACT_APP_HOME_LON = ""` - This should be your home's longitude in a string
 
-## Learn More
+`REACT_APP_HOME_CITY = ""` - This should be your home city name
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`REACT_APP_HOME_STATE = ""` - This should be your home state abbreviation i.e. CA
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Edit the weatherforecast.jsx file to select between openweather and weatherbit, just comment out the weatherbit code and uncomment the openweather code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is not intended to be sold, only to be used within a household.
