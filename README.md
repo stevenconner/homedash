@@ -1,6 +1,6 @@
 # HomeDash - Built with Create React App
 
-This React app is intended to be run on some type of home server, and then accessed from a 1920x1080 tablet of some kind in the house. It was built with only one child in mind. It's been pretty customized to what my family wants, so it's got a precipitation/snow map using Rainviewer (https://www.rainviewer.com/api.html). It's got a weather forecast widget (thanks to https://github.com/farahat80/react-open-weather), a chore system (payouts need to be done manually, there is no logic to automate payouts to any system), a hot/cold lunch selection, and a basic dinner planner. It uses Unsplash for a fresh background every 6 hours.
+This React app is intended to be run on some type of home server, and then accessed from a 1920x1080 resolution tablet of some kind in the house. It was built with only one child in mind. It's been pretty customized to what my family wants, so it's got a precipitation/snow map using Rainviewer (https://www.rainviewer.com/api.html). It's got a weather forecast widget (thanks to https://github.com/farahat80/react-open-weather), a chore system (payouts need to be done manually, there is no logic to automate payouts to any system), a hot/cold lunch selection, and a basic dinner planner. It uses Unsplash for a fresh background every 6 hours.
 
 ![Screenshot](screenshot.png?raw=true)
 
