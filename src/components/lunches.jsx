@@ -47,7 +47,7 @@ class Lunches extends React.Component {
 					{day}
 				</div>
 				<div className={`flex flex-column items-center justify-center ${lunchType === 'Cold' ? '' : 'mr1'}`}>
-					{lunchType === 'Cold' ? <LunchBag color="#00449E" style={{ height: 26, width: 26 }} /> : <HotLunch color="#E7040F" />}
+					{lunchType === 'Cold' ? <LunchBag color="#00449E" style={{ height: 26, width: 26 }} /> : <HotLunch style={{ height: 26, width: 26 }} color="#E7040F" />}
 					<div className={`${lunchType === 'Cold' ? 'dark-blue' : 'dark-red'}`}>
 						{lunchType}
 					</div>
