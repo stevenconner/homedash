@@ -257,8 +257,8 @@ class RainView extends React.Component {
 	}
 
 	render() {
-		const containerHeight = 600;
-		const containerWidth = 800;
+		const containerHeight = 400;
+		const containerWidth = 600;
 		const timestampWidth = 220;
 		const timestampHeight = 20;
 		return (

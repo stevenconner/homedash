@@ -22,11 +22,13 @@ function MainScreen({ unsplashApi }) {
 	}
 
 	if (!backgroundPhoto) {
-		getNewBackground();
+		setTimeout(() => {
+			getNewBackground();
+		}, 5000)
 	}
 
 	return (
-		<div style={{ padding: 10, backgroundImage: `url("${backgroundPhoto}")`, backgroundRepeat: "no-repeat", backgroundSize: 'cover', height: '100vh' }}>
+		<div className="absolute absolute--fill" style={{ padding: 10, backgroundImage: `url("${backgroundPhoto}")`, backgroundRepeat: "no-repeat", backgroundSize: 'cover', height: '100vh' }}>
 			<div className="flex flex-row justify-between">
 				<div>
 					<RainView />
@@ -37,11 +39,13 @@ function MainScreen({ unsplashApi }) {
 						<div className="ml2">
 							<Chores />
 						</div>
-						<div className="ml2">
-							<Lunches />
-						</div>
-						<div className="ml2">
-							<Dinners />
+						<div>
+							<div className="ml2">
+								<Lunches />
+							</div>
+							<div className="ml2">
+								<Dinners />
+							</div>
 						</div>
 					</div>
 					<div>

@@ -16,6 +16,12 @@ const ReactWeatherComponent = ({ lat, lon }) => {
 		lat,
 		lon,
 	});
+
+	console.tron.display({
+		name: 'thing',
+		important: true,
+		value: { data, isLoading }
+	})
 	const customStyles = {
 		fontFamily: 'Helvetica, sans-serif',
 		gradientStart: '#0181C2',

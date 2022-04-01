@@ -34,10 +34,11 @@ class Dinners extends React.Component {
 		}
 	}
 
-	handleDayClick = (day) => {
+	handleDayClick = (day, dinnerText) => {
 		this.setState({
 			showModal: true,
 			selectedDay: day,
+			newDinnerText: dinnerText,
 		})
 	}
 
@@ -54,12 +55,12 @@ class Dinners extends React.Component {
 
 	renderDay = (day, dinnerText) => {
 		return (
-			<div onClick={() => this.handleDayClick(day)} className={`mb2 ph3 pointer flex flex-row justify-between items-center ba b--gray br3 ph2 pv3 mh2`}>
-				<div className={`f3`}>
-					{day}
+			<div onClick={() => this.handleDayClick(day, dinnerText)} className={`mb2 mh2 pa2 pointer flex flex-row items-center ba b--gray br3`}>
+				<div className={`f5`}>
+					{day.substring(0, 3)}
 				</div>
-				<div className={`flex flex-column items-center justify-center ml4 mw5 f4`}>
-					<div>
+				<div className="flex mw5" style={{ flexGrow: 1 }}>
+					<div className={`ml2 w100 f5 tc`} style={{ flexGrow: 1 }}>
 						{dinnerText}
 					</div>
 				</div>
@@ -81,7 +82,7 @@ class Dinners extends React.Component {
 		const modalStyle = {
 			content: {
 				top: '30%',
-				left: '60%',
+				left: '75%',
 				right: 'auto',
 				bottom: 'auto',
 				marginRight: '-50%',
@@ -91,8 +92,8 @@ class Dinners extends React.Component {
 		};
 
 		return (
-			<div className="pa3 shadow-1 overflow-auto" style={{ backgroundColor: 'white', borderRadius: 4, maxHeight: 600 }}>
-				<div className="mb3 f2">
+			<div className="pa3 shadow-1 overflow-auto" style={{ backgroundColor: 'white', borderRadius: 4, maxHeight: 768 }}>
+				<div className="mb3 f3">
 					Dinner Plans
 				</div>
 				{this.renderDay('Monday', dinners.Monday)}

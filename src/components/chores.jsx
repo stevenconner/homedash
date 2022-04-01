@@ -109,7 +109,7 @@ class Chores extends React.Component {
 		choresList.length && choresList.forEach((chore) => {
 			if (chore.status === 'incomplete') {
 				chores.push(
-					<div key={chore.key} onClick={() => this.handleChoreClick(chore)} className="mb2 pointer flex flex-row items-center ba b--gray br3 pa2 f4">
+					<div key={chore.key} onClick={() => this.handleChoreClick(chore)} className="mb2 pointer flex flex-row items-center ba b--gray br3 pa2 f5">
 						<div style={{ height: 30, width: 30 }}>
 							<EmptySquare style={{ height: 30, width: 30 }} />
 						</div>
@@ -136,7 +136,7 @@ class Chores extends React.Component {
 		choresList.length && choresList.forEach((chore) => {
 			if (chore.status === 'pending') {
 				pendingChores.push(
-					<div key={chore.key} onClick={() => this.handleChoreClick(chore)} className="mb2 pointer flex flex-row items-center ba b--light-silver br3 pa2 f4">
+					<div key={chore.key} onClick={() => this.handleChoreClick(chore)} className="mb2 pointer flex flex-row items-center ba b--light-silver br3 pa2 f5">
 						<div style={{ height: 30, width: 30 }}>
 							<CheckedSquare color={'#AAAAAA'} style={{ height: 30, width: 30 }} />
 						</div>
@@ -163,7 +163,7 @@ class Chores extends React.Component {
 		choresList.length && choresList.forEach((chore) => {
 			if (chore.status === 'completed') {
 				completedChores.push(
-					<div key={chore.key} onClick={() => this.handleChoreClick(chore)} className="mb2 pointer flex flex-row items-center ba b--light-silver br3 pa2 f4">
+					<div key={chore.key} onClick={() => this.handleChoreClick(chore)} className="mb2 pointer flex flex-row items-center ba b--light-silver br3 pa2 f5">
 						<div style={{ height: 30, width: 30 }}>
 							<CheckedSquare color={'#AAAAAA'} style={{ height: 30, width: 30 }} />
 						</div>
@@ -187,7 +187,7 @@ class Chores extends React.Component {
 	renderTotalUnpaid = () => {
 		const { totalUnpaid } = this.state;
 		return (
-			<div className="f3 flex flex-row justify-between">
+			<div className="f4 flex flex-row justify-between">
 				<div>
 					Total To Pay:
 				</div>
@@ -201,7 +201,7 @@ class Chores extends React.Component {
 	renderTotalEarnedAllTime = () => {
 		const { totalAllTime } = this.state;
 		return (
-			<div className="mt2 f3 flex flex-row justify-between">
+			<div className="mt2 f4 flex flex-row justify-between">
 				<div>
 					Lifetime Total:
 				</div>
@@ -409,7 +409,7 @@ class Chores extends React.Component {
 		const modalStyle = {
 			content: {
 				top: '30%',
-				left: '60%',
+				left: '75%',
 				right: 'auto',
 				bottom: 'auto',
 				marginRight: '-50%',
@@ -420,13 +420,13 @@ class Chores extends React.Component {
 		};
 
 		return (
-			<div className="pa3 shadow-1 flex flex-column" style={{ backgroundColor: 'white', borderRadius: 4, maxHeight: 1060 }}>
-				<div className="mb3 f2">
+			<div className="pa3 shadow-1 flex flex-column" style={{ backgroundColor: 'white', borderRadius: 4, maxHeight: 812, width: 310 }}>
+				<div className="mb3 f3">
 					{process.env.REACT_APP_CHILD_NAME}'s Chores
 				</div>
 				<div className="flex flex-row justify-between mb2">
-					<div onClick={() => this.handleClearClick()} className="mb2 pointer flex flex-row items-center ba br3 pa2 f4">Clear Completed</div>
-					<div onClick={() => this.handleAddClick()} className="mb2 pointer flex flex-row items-center ba br3 pa2 f4">Add Chore</div>
+					<div onClick={() => this.handleClearClick()} className="mb2 pointer flex flex-row items-center ba br3 pa2 f5">Clear Completed</div>
+					<div onClick={() => this.handleAddClick()} className="mb2 pointer flex flex-row items-center ba br3 pa2 f5 ml2">Add Chore</div>
 				</div>
 				<div className="mb3">
 					{this.renderTotalUnpaid()}

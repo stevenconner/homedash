@@ -42,13 +42,13 @@ class Lunches extends React.Component {
 	renderDay = (day, lunchType) => {
 		const color = lunchType === 'Cold' ? 'dark-blue' : 'dark-red';
 		return (
-			<div onClick={() => this.handleDayClick(day, lunchType)} className={`mb2 ph3 pointer flex flex-row justify-between items-center ba b--gray br3 pa2 b--${color}`}>
-				<div className={`${color} f3`}>
+			<div onClick={() => this.handleDayClick(day, lunchType)} className={`mb2 ph3 pv1 pointer flex flex-row justify-between items-center ba b--gray br3 b--${color}`}>
+				<div className={`${color} f5 mr2`}>
 					{day}
 				</div>
-				<div className={`flex flex-column items-center justify-center ${lunchType === 'Cold' ? '' : 'mr1'}`}>
+				<div className={`flex flex-row items-center justify-center w3 ${lunchType === 'Cold' ? '' : 'mr1'}`}>
 					{lunchType === 'Cold' ? <LunchBag color="#00449E" style={{ height: 26, width: 26 }} /> : <HotLunch style={{ height: 26, width: 26 }} color="#E7040F" />}
-					<div className={`${lunchType === 'Cold' ? 'dark-blue' : 'dark-red'}`}>
+					<div className={`${lunchType === 'Cold' ? 'dark-blue' : 'dark-red'} ml2 f5`}>
 						{lunchType}
 					</div>
 				</div>
@@ -59,8 +59,8 @@ class Lunches extends React.Component {
 	render() {
 		const { lunches } = this.state;
 		return (
-			<div className="pa3 shadow-1" style={{ backgroundColor: 'white', borderRadius: 4 }}>
-				<div className="mb3 f2">
+			<div className="pa2 shadow-1 mb3" style={{ backgroundColor: 'white', borderRadius: 4 }}>
+				<div className="mb3 f3">
 					{process.env.REACT_APP_CHILD_NAME}'s Lunches
 				</div>
 				{this.renderDay('Monday', lunches.Monday)}
